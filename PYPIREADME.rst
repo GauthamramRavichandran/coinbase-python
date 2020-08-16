@@ -1,23 +1,20 @@
 Coinbase
 ========
 
-.. image:: https://img.shields.io/pypi/v/coinbase.svg
+.. image:: https://img.shields.io/pypi/v/pycoinbaseapi?style=plastic
     :target: https://pypi.python.org/pypi/coinbase
 
-.. image:: https://img.shields.io/travis/coinbase/coinbase-python/master.svg
-    :target: https://travis-ci.org/coinbase/coinbase-python
-
-.. image:: https://img.shields.io/pypi/dm/coinbase.svg
+.. image:: https://img.shields.io/pypi/wheel/pycoinbaseapi?style=plastic
     :target: https://pypi.python.org/pypi/coinbase/
 
-.. image:: https://img.shields.io/pypi/wheel/coinbase.svg
+.. image:: https://img.shields.io/pypi/pyversions/pycoinbaseapi?style=plastic
     :target: https://pypi.python.org/pypi/coinbase/
 
-.. image:: https://img.shields.io/pypi/pyversions/coinbase.svg
+.. image:: https://img.shields.io/pypi/l/pycoinbaseapi?style=plastic
     :target: https://pypi.python.org/pypi/coinbase/
 
-.. image:: https://img.shields.io/pypi/l/coinbase.svg
-    :target: https://pypi.python.org/pypi/coinbase/
+.. image:: https://img.shields.io/github/contributors/GauthamramRavichandran/coinbase-python?style=plastic
+    :target: https://github.com/GauthamramRavichandran/coinbase-python/pulls
 
 The **fork** of official Python library for the `Coinbase API
 <https://developers.coinbase.com/api>`_.
