@@ -2,16 +2,16 @@ Coinbase
 ========
 
 .. image:: https://img.shields.io/pypi/v/pycoinbaseapi?style=plastic
-    :target: https://pypi.python.org/pypi/coinbase
+    :target: https://pypi.python.org/pypi/pycoinbaseapi
 
 .. image:: https://img.shields.io/pypi/wheel/pycoinbaseapi?style=plastic
-    :target: https://pypi.python.org/pypi/coinbase/
+    :target: https://pypi.python.org/pypi/pycoinbaseapi/
 
 .. image:: https://img.shields.io/pypi/pyversions/pycoinbaseapi?style=plastic
-    :target: https://pypi.python.org/pypi/coinbase/
+    :target: https://pypi.python.org/pypi/pycoinbaseapi/
 
 .. image:: https://img.shields.io/pypi/l/pycoinbaseapi?style=plastic
-    :target: https://pypi.python.org/pypi/coinbase/
+    :target: https://pypi.python.org/pypi/pycoinbaseapi/
 
 .. image:: https://img.shields.io/github/contributors/GauthamramRavichandran/coinbase-python?style=plastic
     :target: https://github.com/GauthamramRavichandran/coinbase-python/pulls
