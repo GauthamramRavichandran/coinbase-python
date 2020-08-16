@@ -16,7 +16,8 @@ Coinbase
 .. image:: https://img.shields.io/pypi/l/coinbase.svg
     :target: https://pypi.python.org/pypi/coinbase/
 
-The official Python library for the `Coinbase API V2 <https://developers.coinbase.com/api/v2>`_.
+The **fork** of official Python library for the `Coinbase API
+<https://developers.coinbase.com/api>`_.
 
 *Important*: this library currently targets the API V2, and the OAuth client requires V2 permissions (i.e. ``wallet:accounts:read``).
 If you're still using the API V1, please use `the old version of this library <https://pypi.python.org/pypi/coinbase/1.0.4>`_.
@@ -39,21 +40,17 @@ Install with ``pip``:
 
 .. code:: bash
 
-    pip install coinbase
+    pip install pycoinbaseapi
 
 or with ``easy_install``:
 
 .. code:: bash
 
-    easy_install coinbase
+    easy_install pycoinbaseapi
 
 The library is currently tested against Python versions 2.7 and 3.4+.
 
-*Note*: this package name used to refer to the unofficial `coinbase_python`
-library maintained by `George Sibble <https://github.com/sibblegp/>`_.
-George graciously allowed us to use the name for this package instead. You can
-still find that package `on Github <https://github.com/sibblegp/coinbase_python/>`_.
-Thanks, George.
+Credits to the original creator, `Original repository <https://github.com/coinbase/coinbase-python>`_.
 
 Documentation
 -------------
@@ -69,7 +66,7 @@ Next, create a ``Client`` object for interacting with the API:
 
 .. code:: python
 
-    from coinbase.wallet.client import Client
+    from pycoinbaseapi.wallet.client import Client
     client = Client(api_key, api_secret)
 
 OAuth2
@@ -81,7 +78,7 @@ Once you have these credentials (an ``access_token`` and ``refresh_token``), cre
 
 .. code:: python
 
-    from coinbase.wallet.client import OAuthClient
+    from pycoinbaseapi.wallet.client import OAuthClient
     client = OAuthClient(access_token, refresh_token)
 
 Making API Calls
@@ -162,26 +159,29 @@ These exceptions will be subclasses of ``coinbase.wallet.error.CoinbaseError``.
 When the error involves an API request and/or response, the error will be a subclass of ``coinbase.error.APIError``, and include ``request`` and ``response`` attributes with more information about the failed interaction.
 For full details of error responses, please refer `to the relevant API documentation <https://developers.coinbase.com/api/v2#errors>`_.
 
-=============================  ================
-Error                          HTTP Status Code
-=============================  ================
-APIError                       *
-TwoFactorRequiredError         402
-ParamRequiredError             400
-ValidationError                422
-InvalidRequestError            400
-PersonalDetailsRequiredError   400
-AuthenticationError            401
-UnverifiedEmailError           401
-InvalidTokenError              401
-RevokedTokenError              401
-ExpiredTokenError              401
-InvalidScopeError              403
-NotFoundError                  404
-RateLimitExceededError         429
-InternalServerError            500
-ServiceUnavailableError        503
-=============================  ================
+======================================== ================
+Error                                    HTTP Status Code
+======================================== ================
+APIError                                 *
+ParamRequiredError                       400
+InvalidRequestError                      400
+PersonalDetailsRequiredError             400
+IdentityVerificationRequiredError 	     400
+JumioVerificationRequiredError           400
+JumioFaceMatchVerificationRequiredError  400
+AuthenticationError                      401
+UnverifiedEmailError                     401
+InvalidTokenError                        401
+RevokedTokenError                        401
+ExpiredTokenError                        401
+TwoFactorRequiredError                   402
+InvalidScopeError                        403
+NotFoundError                            404
+ValidationError                          422
+RateLimitExceededError                   429
+InternalServerError                      500
+ServiceUnavailableError                  503
+======================================= ================
 
 
 OAuth Client
@@ -210,8 +210,8 @@ If this is the case, a ``TwoFactorRequiredError`` will be raised:
 
 .. code:: python
 
-    from coinbase.wallet.client import Client
-    from coinbase.wallet.error import TwoFactorRequiredError
+    from pycoinbaseapi.wallet.client import Client
+    from pycoinbaseapi.wallet.error import TwoFactorRequiredError
 
     client = Client(api_key, api_secret)
     account = client.get_primary_account()
